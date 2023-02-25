@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Оплата
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Оплата товара</h1>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">{{ item.title }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">{{ item.price }}<small
+                            class="text-muted fw-light">/рублей</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-danger">Оплатить</a>
+                    <a href="/" class="btn btn-outline-info">В каталог</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

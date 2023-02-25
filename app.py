@@ -14,7 +14,7 @@ class Item(db.Model):
     isActive = db.Column(db.Boolean, default=True)
 
     def __repr__(self):
-        return f'Запись:{self.title}'
+        return self.title
 
 
 with app.app_context():
@@ -32,6 +32,12 @@ def index():
 @app.route('/about')
 def about():
     return render_template("about.html")
+
+
+@app.route('/buy/<int:id>')
+def buy(id):
+    item = Item.query.get(id)
+    return render_template("buy.html", item=item)
 
 
 @app.route('/create', methods=['POST', 'GET'])
